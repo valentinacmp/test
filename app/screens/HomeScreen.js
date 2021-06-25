@@ -21,10 +21,7 @@ export default class HomeScreen extends React.Component {
 
     scanAndConnect() {
         this.manager.startDeviceScan(null, null, async (error, device) => {
-            // let obj = { id: device.id, name: device.name, mtu: device.mtu, txPowerLevel: device.txPowerLevel, 
-            //             manufacturerData: device.manufacturerData, isConnectable: device.isConnectable, serviceData: device.serviceData }
             this.setState({ devices: [...this.state.devices, device] });
-            // console.log('AQUI', device);
 
             if (error) {
                 // Handle error (scanning will be stopped automatically)
@@ -35,8 +32,6 @@ export default class HomeScreen extends React.Component {
             this.state.count++
 
             if(this.state.count > 20) {
-            // if(device.id === '45:CC:77:0A:69:49'){
-                // Stop scanning as it's not necessary if you are scanning for one device.
                 this.manager.stopDeviceScan();
                 console.log('stopped');
 
@@ -106,8 +101,6 @@ export default class HomeScreen extends React.Component {
             if (state === 'PoweredOn') {
                 this.setState({ isConnected: true });
                 console.log(this.state.isConnected);
-                // this.scanAndConnect();
-                // subscription.remove();
             } else {
                 this.setState({ isConnected: false });
                 console.log(this.state.isConnected);
