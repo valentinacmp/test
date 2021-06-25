@@ -1,4 +1,4 @@
-# Mobile App a React Native Bluetooth Low Energy library wrapping Multiplatform Ble Adapter (react-native-ble-plx)
+# Mobile App using a React Native Bluetooth Low Energy library wrapping Multiplatform Ble Adapter (react-native-ble-plx)
 
 ## Configuration & Installation
 
